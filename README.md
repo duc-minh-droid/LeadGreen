@@ -1,5 +1,7 @@
 # LeadGreen
 
+**Live demo:** https://leadgreen.vercel.app (demo mode, sample data)
+
 **A sustainability game for campus: scan a QR code where you did something green, post a photo, earn points, grow a plant.**
 
 University group project (Feb to Mar 2025), built by a team of nine. This is a fork of [sirutisb/LeadGreen](https://github.com/sirutisb/LeadGreen) with a polished frontend and a demo mode.
