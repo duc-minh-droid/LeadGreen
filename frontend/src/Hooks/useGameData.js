@@ -22,6 +22,7 @@ export default function useGameData() {
         tree_level: data.tree.level,
         plant_name: data.tree.name,
         plant_image: data.tree.image,
+        growth: data.tree.growth,
         spins: data.spins,
         insect: data.insect || null,
       };
@@ -86,6 +87,7 @@ export default function useGameData() {
           tree_level: data.tree.level,
           plant_name: data.tree.name,
           plant_image: data.tree.image, 
+          growth: data.tree.growth,
           insect: data.insect || null
         }));
 

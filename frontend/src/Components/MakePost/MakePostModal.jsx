@@ -45,6 +45,7 @@ const MakePostModal = ({ open, onClose }) => {
 
       if (response.status === 201) {
         toastSuccess("Post created successfully!")
+        window.dispatchEvent(new Event("leadgreen:post-created"))
         setImages([]);
         setQrValue("");
         setStep(1);

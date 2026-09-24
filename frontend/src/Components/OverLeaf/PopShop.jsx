@@ -203,7 +203,8 @@ const GardenShop = ({ isOpen, onClose, user, setUser, onPurchase }) => {
           // Update user coins
           setUser(prevUser => ({
             ...prevUser,
-            coins: result.remaining_points
+            coins: result.remaining_points,
+            points_balance: result.remaining_points
           }));
           
           // Call the callback to update parent's inventory

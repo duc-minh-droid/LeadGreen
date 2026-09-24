@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
@@ -12,6 +11,7 @@ import PrivateRoute from "./Context/PrivateRoute";
 import { AuthProvider } from "./Context/AuthContext";
 import NavBar from "./Components/NavBar/NavBar";
 import UserProfile from "./Pages/UserProfilePage";
+import DemoBadge from "./Components/DemoBadge";
 
 function App() {
 
@@ -40,6 +40,7 @@ function App() {
         </Routes>
         </AuthProvider>
       <ToastContainer />
+      <DemoBadge />
     </div>
   );
 }

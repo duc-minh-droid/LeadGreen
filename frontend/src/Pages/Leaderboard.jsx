@@ -1,4 +1,5 @@
 import { useState, useEffect} from "react";
+import { BACKEND_URL } from "../config";
 import { Search, ChevronUp, ChevronDown, Leaf, Trophy } from "lucide-react";
 import axios from "axios";
 import Page from "./Page";
@@ -8,7 +9,7 @@ import Footer from "../Components/Footer.jsx";
 import TopContributorsPodium from "../Components/TopContributorsPodium";
 import { Link } from "react-router-dom";
 
-const API_BASE_URL = import.meta.env.VITE_BACKEND + "/api/leaderboard";
+const API_BASE_URL = BACKEND_URL + "/api/leaderboard";
 
 const LeaderboardPage = () => {
   const [searchTerm, setSearchTerm] = useState("");

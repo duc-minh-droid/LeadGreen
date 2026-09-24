@@ -9,7 +9,6 @@ import AuthContext from "../Context/AuthContext";
 
 function FeedPage() {
     const {user} = useContext(AuthContext)
-    console.log(user)
   return (
     <Page className="relative bg-white">
       <NavBar />
@@ -25,6 +24,11 @@ function FeedPage() {
               paddingTop: "20px",
           }}
           >
+
+          <div className="text-center px-4">
+            <h1 className="font-serif text-4xl md:text-5xl text-gray-900">Community feed</h1>
+            <p className="mt-2 text-gray-600">Verified eco-actions from around campus. Double-click a photo to like it.</p>
+          </div>
 
           {/* Create Post Button */}
           {user && <MakePost />}

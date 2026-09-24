@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   // Log in existing user
-  const loginUser = async (e) => {
+  const loginUser = async (e, redirectTo = "/") => {
     setLoginError(null);
     try {
       const { data } = await axiosInstance.post(`/auth/login/`, {
@@ -69,7 +69,7 @@ export const AuthProvider = ({ children }) => {
       setUser(data.user);
       localStorage.setItem("authTokens", JSON.stringify(data.tokens));
       localStorage.setItem("user", JSON.stringify(data.user));
-      navigate("/");
+      navigate(redirectTo);
     } catch (error) {
       console.error("Login Error:", error);
       if (error.response) {

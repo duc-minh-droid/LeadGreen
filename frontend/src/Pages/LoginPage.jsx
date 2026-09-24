@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { DEMO_MODE } from "../config";
 import Button from "../Components/Button";
 import Input from "../Components/Input";
 import Label from "../Components/Label";
@@ -37,8 +38,12 @@ export default function LoginPage() {
     };
   }, [setLoginError]);
 
+  // Send the user back to the page that asked them to log in (e.g. /game)
+  const location = useLocation();
+  const redirectTo = location.state?.from || "/";
+
   const onSubmit = (data) => {
-      loginUser(data);// Calls loginUser with the form data
+      loginUser(data, redirectTo);// Calls loginUser with the form data
   };
 
   return (
@@ -65,6 +70,12 @@ export default function LoginPage() {
               </Link>
             </p>
           </div>
+
+          {DEMO_MODE && (
+            <div className="mt-4 p-3 bg-amber-50 border border-amber-200 text-amber-900 rounded-lg text-sm">
+              <span className="font-semibold">Demo mode:</span> there is no server, so any username and password will log you in.
+            </div>
+          )}
 
           {/* Display login error message if it exists */}
           {loginError && (

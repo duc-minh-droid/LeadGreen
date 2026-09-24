@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, Stack, CircularProgress } from "@mui/material";
 import { Scanner } from '@yudiel/react-qr-scanner';
+import { motion } from "framer-motion";
 import { ArrowForward, Cancel, QrCode2 } from "@mui/icons-material";
 import { toastError, toastInfo, toastSuccess } from "../utils/toastCustom";
 import axiosInstance from "../../Context/axiosInstance";
+import { DEMO_MODE } from "../../config";
+import { QR_CODES } from "../../demo/demoData";
 
 const QRScannerStep = ({ qrValue, setQrValue, nextStep }) => {
   const [isScanning, setIsScanning] = useState(qrValue === "");
@@ -39,7 +42,7 @@ const QRScannerStep = ({ qrValue, setQrValue, nextStep }) => {
       const isValid = await validateQRCode(code);
       
       // Simulate delay
-      await new Promise(resolve => setTimeout(resolve, 1600));
+      await new Promise(resolve => setTimeout(resolve, DEMO_MODE ? 700 : 1600));
       
       if (isValid) {
         setQrValue(code);
@@ -103,19 +106,40 @@ const QRScannerStep = ({ qrValue, setQrValue, nextStep }) => {
           <Box
             sx={{
               width: { xs: "250px", sm: "300px", md: "320px" },
-              height: { xs: "250px", sm: "300px", md: "320px" },
+              height: DEMO_MODE ? "190px" : { xs: "250px", sm: "300px", md: "320px" },
               mx: "auto",
               position: "relative",
               borderRadius: "12px",
               overflow: "hidden",
             }}
           >
-            <Scanner
-              onScan={handleScan}
-              onError={handleError}
-              scanDelay={500}
-              paused={isValidating}
-            />
+            {DEMO_MODE ? (
+              // No camera in demo mode: an animated viewfinder stands in for the scanner
+              <Box sx={{ position: "absolute", inset: 0, bgcolor: "#0f2e1a", display: "grid", placeItems: "center", overflow: "hidden" }}>
+                <QrCode2 sx={{ fontSize: 110, color: "rgba(255,255,255,0.15)" }} />
+                <motion.div
+                  style={{ position: "absolute", left: "10%", right: "10%", height: 3, borderRadius: 2, background: "#4ade80", boxShadow: "0 0 18px #4ade80" }}
+                  animate={{ top: ["12%", "86%", "12%"] }}
+                  transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+                />
+                {["0 auto auto 0", "0 0 auto auto", "auto auto 0 0", "auto 0 0 auto"].map((inset, i) => (
+                  <Box key={i} sx={{ position: "absolute", inset, m: 2, width: 36, height: 36,
+                    borderColor: "#4ade80", borderStyle: "solid", borderWidth: 0,
+                    ...(i === 0 && { borderTopWidth: 4, borderLeftWidth: 4 }),
+                    ...(i === 1 && { borderTopWidth: 4, borderRightWidth: 4 }),
+                    ...(i === 2 && { borderBottomWidth: 4, borderLeftWidth: 4 }),
+                    ...(i === 3 && { borderBottomWidth: 4, borderRightWidth: 4 }),
+                  }} />
+                ))}
+              </Box>
+            ) : (
+              <Scanner
+                onScan={handleScan}
+                onError={handleError}
+                scanDelay={500}
+                paused={isValidating}
+              />
+            )}
             
             {/* Overlay during validation */}
             {isValidating && (
@@ -235,6 +259,29 @@ const QRScannerStep = ({ qrValue, setQrValue, nextStep }) => {
           </Box>
         )}
       </Box>
+
+      {/* Demo mode: no camera needed, pretend to scan one of the campus codes */}
+      {DEMO_MODE && isScanning && (
+        <Box sx={{ mt: 2 }}>
+          <Typography variant="caption" sx={{ color: "#555", display: "block", mb: 1 }}>
+            Demo mode: tap a campus code to simulate a scan
+          </Typography>
+          <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={1}>
+            {QR_CODES.map((q) => (
+              <Button
+                key={q.code}
+                size="small"
+                variant="outlined"
+                disabled={isValidating}
+                onClick={() => handleScan([{ rawValue: q.code }])}
+                sx={{ borderColor: "#1B6630", color: "#1B6630", textTransform: "none", borderRadius: 999, fontSize: 12, py: 0.25 }}
+              >
+                {q.location} · {q.points} pts
+              </Button>
+            ))}
+          </Stack>
+        </Box>
+      )}
 
       {/* Action buttons */}
       <Stack direction="row" spacing={2} justifyContent="center" mt={3} width="100%">

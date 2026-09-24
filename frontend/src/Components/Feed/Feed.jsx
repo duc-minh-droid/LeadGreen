@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
+import { BACKEND_URL } from "../../config";
 import axiosInstance from "../../Context/axiosInstance";
 import useInfiniteScroll from "../../Hooks/useInfiniteScroll";
 import Post from "./Post";
 import LinearProgress from '@mui/material/LinearProgress';
 import { Fab, Zoom, Box } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { motion } from "framer-motion";
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
-  const [nextPage, setNextPage] = useState(`${import.meta.env.VITE_BACKEND}/api/posts?page=1`);
+  const [nextPage, setNextPage] = useState(`${BACKEND_URL}/api/posts?page=1`);
   const [isFetchingNextPage, setIsFetchingNextPage] = useState(false);
   const [hasNextPage, setHasNextPage] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -48,6 +50,20 @@ const Feed = () => {
     }
   }, []);
 
+  // When a new post is created, pull the first page again so it shows up on top
+  useEffect(() => {
+    const onCreated = async () => {
+      try {
+        const { data } = await axiosInstance.get(`${BACKEND_URL}/api/posts?page=1`);
+        setPosts((prev) => [...data.results.filter((p) => !prev.some((x) => x.id === p.id)), ...prev]);
+      } catch (error) {
+        console.error("Error refreshing posts:", error);
+      }
+    };
+    window.addEventListener("leadgreen:post-created", onCreated);
+    return () => window.removeEventListener("leadgreen:post-created", onCreated);
+  }, []);
+
   const observeLastElement = useInfiniteScroll(fetchNextPage, hasNextPage, isFetchingNextPage, setIsFetchingNextPage, 800);
 
   useEffect(() => {
@@ -82,7 +98,14 @@ const Feed = () => {
             mb: { xs: 2, md: 4 },
           }}
         >
-          <Post post={post} />
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <Post post={post} />
+          </motion.div>
         </Box>
       ))}
 
@@ -94,7 +117,7 @@ const Feed = () => {
           onClick={scrollToTop}
           sx={{
             position: "fixed",
-            bottom: 20,
+            bottom: 64,
             right: 20,
             backgroundColor: "#1B6630",
             padding: { xs: "10px 14px", md: "12px 20px" },

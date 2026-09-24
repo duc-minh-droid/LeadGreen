@@ -29,3 +29,6 @@ data/final_fires.json
 .env.*
 !.env.example
 .vercel
+
+# Copied from backend/media by scripts/copy-demo-media.mjs
+public/media/

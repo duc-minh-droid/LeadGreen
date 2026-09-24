@@ -1,14 +1,21 @@
 import axios from "axios";
+import { BACKEND_URL, DEMO_MODE } from "../config";
+import { demoAdapter } from "../demo/demoApi";
 import { jwtDecode } from "jwt-decode";
 import dayjs from "dayjs";
 
-const baseURL = import.meta.env.VITE_BACKEND+"/api/";
+const baseURL = BACKEND_URL+"/api/";
+
+// In demo mode every request (including plain `axios` calls elsewhere) is served
+// by the in-browser demo API instead of the network.
+if (DEMO_MODE) axios.defaults.adapter = demoAdapter;
 
 let authTokens = localStorage.getItem("authTokens") ? JSON.parse(localStorage.getItem("authTokens")) : null;
 // Retrieve stored authentication tokens from localStorage
 // Create an Axios instance with a base URL and initial authorization header
 const axiosInstance = axios.create({
   baseURL,
+  ...(DEMO_MODE && { adapter: demoAdapter }),
   headers: {
     Authorization: authTokens ? `Bearer ${authTokens.access}` : "",
   },

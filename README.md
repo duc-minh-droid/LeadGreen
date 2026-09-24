@@ -1,4 +1,30 @@
-## LeadGreen - Sustainability Game
+# LeadGreen
+
+**A sustainability game for campus: scan a QR code where you did something green, post a photo, earn points, grow a plant.**
+
+University group project (Feb to Mar 2025), built by a team of nine. This is a fork of [sirutisb/LeadGreen](https://github.com/sirutisb/LeadGreen) with a polished frontend and a demo mode.
+
+![LeadGreen demo](docs/media/demo.gif)
+
+| Game | Feed | Leaderboard |
+|---|---|---|
+| ![](docs/media/game.png) | ![](docs/media/feed.png) | ![](docs/media/leaderboard.png) |
+
+## Team
+
+[@sirutisb](https://github.com/sirutisb), [@tvtn24](https://github.com/tvtn24), [@duc-minh-droid](https://github.com/duc-minh-droid), [@Taha-Mukati](https://github.com/Taha-Mukati), [@bananaboy10](https://github.com/bananaboy10), [@surajnagpal](https://github.com/surajnagpal), [@pulse77](https://github.com/pulse77), Ralph and Benitas.
+
+## My part
+
+I (Thomas, @duc-minh-droid) worked mostly on the React frontend of the plant game ("OverLeaf"): the item bar and inventory, the pop-up shop, daily rewards and the reward spin, level-up sound and confetti, the mobile layout of the plant, and fixes to the game login flow, image upload and QR scanner steps.
+
+## Demo mode
+
+With no `VITE_BACKEND` set, the frontend runs without the Django server: any username and password log you in, and plants, items, posts and the leaderboard come from bundled sample data in the browser. A "Demo mode" badge is always shown. Set `VITE_BACKEND` to the Django API URL to use the real backend.
+
+---
+
+## About
 Welcome to LeadGreen! A web application with a Django backend and React frontend designed to promote sustainable habits through gamification. Users can post their eco-friendly actions, such as recycling, reducing vehicle travel, and saving electricity, by scanning a QR code. Each post earns points that users can spend to grow their virtual plant by watering, fertilizing, and cleaning it. Help us create a carbon neutral environment.
 
 When you complete a sustainable activity such as picking up litter or using public transport, you scan a QR code at that location and post a photo of what you have done. You will then be awarded points based on what the activity was and your photo will be uploaded to the feed where other users can see your activity.

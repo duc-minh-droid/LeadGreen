@@ -15,6 +15,13 @@ const OverLeaf = () => {
   const [shopOpen, setShopOpen] = useState(false);
   const plantRef = useRef(null);
   const [inventory, setInventory] = useState([]);
+  // Little "+10% growth" labels that float up from the plant after an action
+  const [floaters, setFloaters] = useState([]);
+  const addFloater = (text) => {
+    const id = Date.now() + Math.random();
+    setFloaters((f) => [...f, { id, text }]);
+    setTimeout(() => setFloaters((f) => f.filter((x) => x.id !== id)), 1400);
+  };
 
   // Fetch inventory data
   const loadInventory = async () => {
@@ -100,10 +107,16 @@ const OverLeaf = () => {
         .filter((i) => i.amount > 0)
     );
 
+    const before = user ? user.tree_level + (user.growth || 0) : 0;
     const result = await executeAction(selectedIcon);
 
     if (result.success) {
       playActionSound(selectedIcon);
+      const tree = result.data.tree;
+      const delta = tree.level + tree.growth - before;
+      if (delta > 0.001) addFloater(`+${Math.round(delta * 100)}% growth`);
+      else if (/insect removed/i.test(result.data.message || "")) addFloater("Bug removed!");
+      else addFloater(item.label);
 
       const serverInventory = await fetchInventory();
       const serverItem = serverInventory.find((i) => i.item.id === selectedIcon);
@@ -126,7 +139,14 @@ const OverLeaf = () => {
     }
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <div className="flex h-[70vh] flex-col items-center justify-center gap-3 text-green-800">
+        <div className="h-12 w-12 animate-spin rounded-full border-4 border-green-200 border-t-green-600" />
+        <p className="font-semibold">Watering your garden...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="relative min-h-screen w-full">
@@ -155,6 +175,16 @@ const OverLeaf = () => {
           plantName={user.plant_name}
           insect={currentInsect}
           onClick={handleAction}
+          floaters={floaters}
+          hint={
+            currentInsect
+              ? "A bug! Select the glove and tap the plant"
+              : selectedIcon
+                ? "Tap the plant to use it"
+                : inventory.length
+                  ? "Pick an item below, then tap the plant"
+                  : "Buy items in the shop to grow your plant"
+          }
         />
       </div>
 

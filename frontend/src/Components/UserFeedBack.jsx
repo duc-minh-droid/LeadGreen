@@ -5,32 +5,32 @@ import { Star, Quote } from "lucide-react";
 const testimonials = [
   {
     text: "LeadGreen has completely changed how I approach sustainability. It's fun, engaging, and really makes me feel like I'm making a difference!",
-    author: "Thomas.",
-    role: "Intern at LeadGreen",
+    author: "Student",
+    role: "Example persona",
     rating: 5
   },
   {
     text: "As a busy professional, I never thought I'd have time for eco-friendly habits. LeadGreen made it easy and rewarding to incorporate sustainability into my daily routine.",
-    author: "Benzos.",
-    role: "Head of amazon logistics",
+    author: "Staff member",
+    role: "Example persona",
     rating: 5
   },
   {
     text: "The community aspect of LeadGreen is fantastic. I've connected with so many like-minded people and learned tons of new ways to reduce my carbon footprint.",
-    author: "Spood",
-    role: "Student",
+    author: "Society member",
+    role: "Example persona",
     rating: 5
   },
   {
     text: "The gamification elements make sustainability fun! I love watching my virtual plant grow as I complete eco-friendly tasks.",
-    author: "Tay Keith",
-    role: "Digital Marketing Manager",
+    author: "Commuter",
+    role: "Example persona",
     rating: 5
   },
   {
     text: "This app has made me much more conscious of my environmental impact. The QR code scanning feature is genius!",
-    author: "Taha Mukati",
-    role: "Boss man",
+    author: "Postgraduate",
+    role: "Example persona",
     rating: 5
   }
 ];
@@ -113,8 +113,11 @@ export default function UserFeedback() {
     <section className="w-full py-8 md:py-16 px-4 ">
       <div className="max-w-6xl mx-auto" ref={containerRef}>
         <h2 className="text-4xl md:text-5xl font-serif text-center mb-8 mt-25 md:mb-16 text-black">
-          What Our Users Say
+          What players should feel
         </h2>
+        <p className="-mt-4 md:-mt-10 mb-8 md:mb-12 text-center text-sm text-gray-500">
+          Illustrative quotes written for the coursework prototype, not real reviews.
+        </p>
 
         <div className="flex justify-center">
           <div className="relative w-full overflow-hidden rounded-xl md:rounded-2xl p-4 md:p-6 bg-white/5 backdrop-blur-sm">

@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { Leaf, TableOfContents, Menu, X } from "lucide-react"
 import UserNav from "./UserNav"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { motion, AnimatePresence, easeIn  } from "framer-motion"
 import MobileDropDown from './MobileDropDown';
 //na
@@ -31,6 +31,7 @@ const linkVariants = {
 
 export default function NavBar(){
   const [isOpen, setIsOpen] = useState(false)
+  const { pathname } = useLocation()
 
   const navLinks = [
     {to: "/feed", text: "Feed"},
@@ -41,7 +42,7 @@ export default function NavBar(){
   return(
     <>
       {/* Make NavBar transparent */}
-      <motion.div className="flex justify-between items-center py-8 z-50 backdrop-blur-lg shadow-md bg-transparent "
+      <motion.div className="flex justify-between items-center py-5 z-50 backdrop-blur-lg shadow-md bg-white/40 sticky top-0 "
       // NavBar animation
       initial = "hidden"
       animate = "visible"
@@ -55,12 +56,20 @@ export default function NavBar(){
         <div className="hidden md:flex">
           <div className="flex items-center space-x-6 px-8">
             {navLinks.map((link) => (
-              <motion.div key={link.to} whileHover="hover" variants={linkVariants}>
+              <motion.div key={link.to} whileHover="hover" variants={linkVariants} className="relative">
                 <Link 
                   to={link.to}
-                  className="text-2xl font-bold text-green-700">
+                  className="text-xl font-bold text-green-700">
                     {link.text}
                 </Link>
+                {/* animated underline that slides to the active page */}
+                {pathname.startsWith(link.to) && (
+                  <motion.span
+                    layoutId="nav-underline"
+                    className="absolute left-0 right-0 -bottom-1.5 h-[3px] rounded-full bg-green-500"
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
+                )}
               </motion.div>
             ))}
             <motion.div whileHover="hover" variants={linkVariants}>

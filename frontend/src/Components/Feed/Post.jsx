@@ -5,14 +5,27 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import axiosInstance from "../../Context/axiosInstance";
 import { toastError, toastSuccess } from "../utils/toastCustom";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+
+// "5h ago" style timestamps
+const timeAgo = (iso) => {
+  const mins = Math.max(1, Math.round((Date.now() - new Date(iso).getTime()) / 60000));
+  if (mins < 2) return "just now";
+  if (mins < 60) return `${mins}m ago`;
+  const hours = Math.round(mins / 60);
+  if (hours < 24) return `${hours}h ago`;
+  return `${Math.round(hours / 24)}d ago`;
+};
 
 const Post = ({ post }) => {
   const [isLiked, setIsLiked] = useState(post.liked_by_user);
   const [likesCount, setLikesCount] = useState(post.likes_count);
+  const [burst, setBurst] = useState(0);
 
   const handleLike = async () => {
     const newIsLiked = !isLiked;
     const newLikesCount = newIsLiked ? likesCount + 1 : likesCount - 1;
+    if (newIsLiked) setBurst(Date.now());
     
     try {
       // Optimistically update UI
@@ -43,6 +56,7 @@ const Post = ({ post }) => {
         borderRadius: 2,
         boxShadow: 3,
         maxWidth: 500,
+        overflow: "hidden",
         mx: "auto",
         mt: 2,
         p: 2,
@@ -112,6 +126,11 @@ const Post = ({ post }) => {
             {post.user.username}
           </Typography>
         </Link>
+        {post.created_at && (
+          <Typography variant="caption" sx={{ ml: 1.5, color: "#6b7280" }}>
+            {timeAgo(post.created_at)}
+          </Typography>
+        )}
       </Box>
 
             <Typography
@@ -128,13 +147,33 @@ const Post = ({ post }) => {
           borderRadius: 2,
           overflow: "hidden",
           mb: 1,
+          position: "relative",
         }}
+        onDoubleClick={() => !isLiked && handleLike()}
       >
-        <img
+        <motion.img
           src={post.image}
           alt="Post"
-          style={{ width: "100%", height: "auto", display: "block" }}
+          style={{ width: "100%", maxHeight: 460, objectFit: "cover", display: "block" }}
+          whileHover={{ scale: 1.03 }}
+          transition={{ duration: 0.4 }}
+          draggable={false}
         />
+        {/* heart that pops over the photo when liked (also on double-click) */}
+        <AnimatePresence>
+          {burst > 0 && (
+            <motion.div
+              key={burst}
+              style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center", pointerEvents: "none" }}
+              initial={{ opacity: 0, scale: 0.3 }}
+              animate={{ opacity: [0, 1, 1, 0], scale: [0.3, 1.2, 1, 1.1] }}
+              transition={{ duration: 0.9, times: [0, 0.3, 0.7, 1] }}
+              onAnimationComplete={() => setBurst(0)}
+            >
+              <FavoriteIcon sx={{ fontSize: 110, color: "white", filter: "drop-shadow(0 6px 16px rgba(0,0,0,.35))" }} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </Box>
 
       {/* Like Button and Count */}
@@ -148,7 +187,15 @@ const Post = ({ post }) => {
             }
           }}
         >
-          {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+          <motion.span
+            key={isLiked ? "on" : "off"}
+            style={{ display: "inline-flex" }}
+            initial={{ scale: 0.5 }}
+            animate={{ scale: [0.5, 1.35, 1] }}
+            transition={{ duration: 0.35 }}
+          >
+            {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+          </motion.span>
         </IconButton>
         <Typography 
           variant="body2" 
