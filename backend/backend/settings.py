@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
+import sys
+import tempfile
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,10 +24,12 @@ from datetime import timedelta
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j5v($1+$7pm+*cd%t_a9=&wzi)7@inr+si6@km#&ld57&3rf8m'
+# Read from the environment. The fallback is only for local development; never
+# deploy without setting DJANGO_SECRET_KEY.
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-local-dev-only-change-me')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '1') == '1'
 
 ALLOWED_HOSTS = ['*'] # Allow all hosts FOR TESTING
 
@@ -37,6 +42,10 @@ CORS_ALLOW_ALL_ORIGINS = True
 import os
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# The test suite uploads dummy images; keep them out of the committed media folder.
+if 'test' in sys.argv:
+    MEDIA_ROOT = tempfile.mkdtemp(prefix='leadgreen-test-media-')
 
 AUTH_USER_MODEL = 'users.UserProfile'
 

@@ -1,0 +1,1055 @@
+[
+{
+  "model": "game.plant",
+  "pk": 1,
+  "fields": {
+    "name": "Leafy",
+    "level": 1,
+    "image": "plants/plant1.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 2,
+  "fields": {
+    "name": "Sprouto",
+    "level": 2,
+    "image": "plants/plant2.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 3,
+  "fields": {
+    "name": "Thorny",
+    "level": 3,
+    "image": "plants/plant3.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 4,
+  "fields": {
+    "name": "Fuzzbloom",
+    "level": 4,
+    "image": "plants/plant4.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 5,
+  "fields": {
+    "name": "Budster",
+    "level": 5,
+    "image": "plants/plant5.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 6,
+  "fields": {
+    "name": "Twigsy",
+    "level": 6,
+    "image": "plants/plant6.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 7,
+  "fields": {
+    "name": "Fernie",
+    "level": 7,
+    "image": "plants/plant7.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 8,
+  "fields": {
+    "name": "Petali",
+    "level": 8,
+    "image": "plants/plant8.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 9,
+  "fields": {
+    "name": "Saply",
+    "level": 9,
+    "image": "plants/plant9.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 10,
+  "fields": {
+    "name": "Bloomy",
+    "level": 10,
+    "image": "plants/plant10.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 11,
+  "fields": {
+    "name": "Vineo",
+    "level": 11,
+    "image": "plants/plant11.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 12,
+  "fields": {
+    "name": "Frondie",
+    "level": 12,
+    "image": "plants/plant12.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 13,
+  "fields": {
+    "name": "Stemy",
+    "level": 13,
+    "image": "plants/plant13.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 14,
+  "fields": {
+    "name": "Pluff",
+    "level": 14,
+    "image": "plants/plant14.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 15,
+  "fields": {
+    "name": "Verdan",
+    "level": 15,
+    "image": "plants/plant15.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 16,
+  "fields": {
+    "name": "Bristle",
+    "level": 16,
+    "image": "plants/plant16.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 17,
+  "fields": {
+    "name": "Mossby",
+    "level": 17,
+    "image": "plants/plant17.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 18,
+  "fields": {
+    "name": "Cloverly",
+    "level": 18,
+    "image": "plants/plant18.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 19,
+  "fields": {
+    "name": "Tendril",
+    "level": 19,
+    "image": "plants/plant19.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 20,
+  "fields": {
+    "name": "Barky",
+    "level": 20,
+    "image": "plants/plant20.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 21,
+  "fields": {
+    "name": "Snappy",
+    "level": 21,
+    "image": "plants/plant21.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 22,
+  "fields": {
+    "name": "Willoof",
+    "level": 22,
+    "image": "plants/plant22.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 23,
+  "fields": {
+    "name": "Sporey",
+    "level": 23,
+    "image": "plants/plant23.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 24,
+  "fields": {
+    "name": "Drifty",
+    "level": 24,
+    "image": "plants/plant24.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 25,
+  "fields": {
+    "name": "Wispvine",
+    "level": 25,
+    "image": "plants/plant25.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 26,
+  "fields": {
+    "name": "Chloro",
+    "level": 26,
+    "image": "plants/plant26.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 27,
+  "fields": {
+    "name": "Gloomeaf",
+    "level": 27,
+    "image": "plants/plant27.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 28,
+  "fields": {
+    "name": "Puffern",
+    "level": 28,
+    "image": "plants/plant28.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 29,
+  "fields": {
+    "name": "Grassy",
+    "level": 29,
+    "image": "plants/plant29.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 30,
+  "fields": {
+    "name": "Blushy",
+    "level": 30,
+    "image": "plants/plant30.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 31,
+  "fields": {
+    "name": "Bramby",
+    "level": 31,
+    "image": "plants/plant31.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 32,
+  "fields": {
+    "name": "Tuffin",
+    "level": 32,
+    "image": "plants/plant32.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 33,
+  "fields": {
+    "name": "Nettle",
+    "level": 33,
+    "image": "plants/plant33.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 34,
+  "fields": {
+    "name": "Whispen",
+    "level": 34,
+    "image": "plants/plant34.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 35,
+  "fields": {
+    "name": "Zestem",
+    "level": 35,
+    "image": "plants/plant35.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 36,
+  "fields": {
+    "name": "Lushie",
+    "level": 36,
+    "image": "plants/plant36.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 37,
+  "fields": {
+    "name": "Fiddleaf",
+    "level": 37,
+    "image": "plants/plant37.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 38,
+  "fields": {
+    "name": "Stalky",
+    "level": 38,
+    "image": "plants/plant38.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 39,
+  "fields": {
+    "name": "Thornlet",
+    "level": 39,
+    "image": "plants/plant39.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 40,
+  "fields": {
+    "name": "Dewie",
+    "level": 40,
+    "image": "plants/plant40.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 41,
+  "fields": {
+    "name": "Rootie",
+    "level": 41,
+    "image": "plants/plant41.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 42,
+  "fields": {
+    "name": "Glowbloom",
+    "level": 42,
+    "image": "plants/plant42.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 43,
+  "fields": {
+    "name": "Jungleaf",
+    "level": 43,
+    "image": "plants/plant43.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 44,
+  "fields": {
+    "name": "Saplet",
+    "level": 44,
+    "image": "plants/plant44.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 45,
+  "fields": {
+    "name": "Shrubbly",
+    "level": 45,
+    "image": "plants/plant45.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 46,
+  "fields": {
+    "name": "Berris",
+    "level": 46,
+    "image": "plants/plant46.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 47,
+  "fields": {
+    "name": "Murkbud",
+    "level": 47,
+    "image": "plants/plant47.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 48,
+  "fields": {
+    "name": "Fluffer",
+    "level": 48,
+    "image": "plants/plant48.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 49,
+  "fields": {
+    "name": "Shadee",
+    "level": 49,
+    "image": "plants/plant49.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 50,
+  "fields": {
+    "name": "Pettal",
+    "level": 50,
+    "image": "plants/plant50.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 51,
+  "fields": {
+    "name": "Frosto",
+    "level": 51,
+    "image": "plants/plant51.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 52,
+  "fields": {
+    "name": "Creepvine",
+    "level": 52,
+    "image": "plants/plant52.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 53,
+  "fields": {
+    "name": "Tendri",
+    "level": 53,
+    "image": "plants/plant53.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 54,
+  "fields": {
+    "name": "Dandy",
+    "level": 54,
+    "image": "plants/plant54.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 55,
+  "fields": {
+    "name": "Wanderfern",
+    "level": 55,
+    "image": "plants/plant55.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 56,
+  "fields": {
+    "name": "Mistybloom",
+    "level": 56,
+    "image": "plants/plant56.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 57,
+  "fields": {
+    "name": "Waggly",
+    "level": 57,
+    "image": "plants/plant57.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 58,
+  "fields": {
+    "name": "Frilleaf",
+    "level": 58,
+    "image": "plants/plant58.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 59,
+  "fields": {
+    "name": "Quirko",
+    "level": 59,
+    "image": "plants/plant59.svg"
+  }
+},
+{
+  "model": "game.plant",
+  "pk": 60,
+  "fields": {
+    "name": "Verdini",
+    "level": 60,
+    "image": "plants/plant60.svg"
+  }
+},
+{
+  "model": "game.insect",
+  "pk": 1,
+  "fields": {
+    "name": "Buzzly",
+    "level": 1,
+    "spawn_chance": 0.2,
+    "image": "insects/insect1.svg"
+  }
+},
+{
+  "model": "game.insect",
+  "pk": 2,
+  "fields": {
+    "name": "Creepsy",
+    "level": 2,
+    "spawn_chance": 0.2,
+    "image": "insects/insect2.svg"
+  }
+},
+{
+  "model": "game.insect",
+  "pk": 3,
+  "fields": {
+    "name": "Chitter",
+    "level": 3,
+    "spawn_chance": 0.2,
+    "image": "insects/insect3.svg"
+  }
+},
+{
+  "model": "game.insect",
+  "pk": 4,
+  "fields": {
+    "name": "Zigzag",
+    "level": 4,
+    "spawn_chance": 0.2,
+    "image": "insects/insect4.svg"
+  }
+},
+{
+  "model": "game.insect",
+  "pk": 5,
+  "fields": {
+    "name": "Flutter",
+    "level": 5,
+    "spawn_chance": 0.2,
+    "image": "insects/insect5.svg"
+  }
+},
+{
+  "model": "game.insect",
+  "pk": 6,
+  "fields": {
+    "name": "Stingster",
+    "level": 6,
+    "spawn_chance": 0.2,
+    "image": "insects/insect6.svg"
+  }
+},
+{
+  "model": "game.insect",
+  "pk": 7,
+  "fields": {
+    "name": "Munchy",
+    "level": 7,
+    "spawn_chance": 0.2,
+    "image": "insects/insect7.svg"
+  }
+},
+{
+  "model": "game.insect",
+  "pk": 8,
+  "fields": {
+    "name": "Gnatso",
+    "level": 8,
+    "spawn_chance": 0.2,
+    "image": "insects/insect8.svg"
+  }
+},
+{
+  "model": "game.insect",
+  "pk": 9,
+  "fields": {
+    "name": "Beetlo",
+    "level": 9,
+    "spawn_chance": 0.2,
+    "image": "insects/insect9.svg"
+  }
+},
+{
+  "model": "game.insect",
+  "pk": 10,
+  "fields": {
+    "name": "Clicksy",
+    "level": 10,
+    "spawn_chance": 0.2,
+    "image": "insects/insect10.svg"
+  }
+},
+{
+  "model": "game.insect",
+  "pk": 11,
+  "fields": {
+    "name": "Mosquibo",
+    "level": 11,
+    "spawn_chance": 0.2,
+    "image": "insects/insect11.svg"
+  }
+},
+{
+  "model": "game.insect",
+  "pk": 12,
+  "fields": {
+    "name": "Nettlebug",
+    "level": 12,
+    "spawn_chance": 0.2,
+    "image": "insects/insect12.svg"
+  }
+},
+{
+  "model": "game.itemeffect",
+  "pk": 1,
+  "fields": {
+    "name": "REMOVE_INSECT",
+    "effect_type": "REMOVE_INSECT",
+    "parameters": {}
+  }
+},
+{
+  "model": "game.itemeffect",
+  "pk": 2,
+  "fields": {
+    "name": "Insect Shield (5 minutes)",
+    "effect_type": "TEMPORARY_SHIELD",
+    "parameters": {
+      "duration_seconds": 300
+    }
+  }
+},
+{
+  "model": "game.itemeffect",
+  "pk": 3,
+  "fields": {
+    "name": "Insect Shield (1 hour)",
+    "effect_type": "TEMPORARY_SHIELD",
+    "parameters": {
+      "duration_seconds": 300
+    }
+  }
+},
+{
+  "model": "game.itemeffect",
+  "pk": 4,
+  "fields": {
+    "name": "Growth Boost (x2 - 5min)",
+    "effect_type": "TIME_BOOST",
+    "parameters": {
+      "speed_multiplier": 2,
+      "duration_seconds": 300
+    }
+  }
+},
+{
+  "model": "game.itemeffect",
+  "pk": 5,
+  "fields": {
+    "name": "Growth Boost (x3 - 1 day)",
+    "effect_type": "TIME_BOOST",
+    "parameters": {
+      "speed_multiplier": 3,
+      "duration_seconds": 86400
+    }
+  }
+},
+{
+  "model": "game.item",
+  "pk": 1,
+  "fields": {
+    "name": "Water",
+    "description": "Hydrate your plants",
+    "price": 30,
+    "image": "items/water_nNK5ICg.png",
+    "item_type": "CONSUMABLE",
+    "cooldown_seconds": 0,
+    "parameters": {
+      "growth_amount": 0.1,
+      "spawn_chance": 0.02
+    },
+    "effects": []
+  }
+},
+{
+  "model": "game.item",
+  "pk": 2,
+  "fields": {
+    "name": "Soil",
+    "description": "Premium soil from the finest land",
+    "price": 80,
+    "image": "items/soil_7Ew1uHl.png",
+    "item_type": "CONSUMABLE",
+    "cooldown_seconds": 3,
+    "parameters": {
+      "growth_amount": 0.3,
+      "spawn_chance": 0.06
+    },
+    "effects": []
+  }
+},
+{
+  "model": "game.item",
+  "pk": 3,
+  "fields": {
+    "name": "Glove",
+    "description": "Remove those pests",
+    "price": 65,
+    "image": "items/glove_RvSlwKO.png",
+    "item_type": "CONSUMABLE",
+    "cooldown_seconds": 0,
+    "parameters": {},
+    "effects": [
+      1
+    ]
+  }
+},
+{
+  "model": "game.item",
+  "pk": 4,
+  "fields": {
+    "name": "Basic Pesticide",
+    "description": "Insect repellent",
+    "price": 100,
+    "image": "items/pesticide.png",
+    "item_type": "CONSUMABLE",
+    "cooldown_seconds": 5,
+    "parameters": {},
+    "effects": [
+      2
+    ]
+  }
+},
+{
+  "model": "game.item",
+  "pk": 5,
+  "fields": {
+    "name": "Super Pesticide",
+    "description": "Those pests are not coming back.",
+    "price": 150,
+    "image": "items/pesticide-2.png",
+    "item_type": "CONSUMABLE",
+    "cooldown_seconds": 30,
+    "parameters": {},
+    "effects": [
+      3
+    ]
+  }
+},
+{
+  "model": "game.item",
+  "pk": 6,
+  "fields": {
+    "name": "Fertiliser",
+    "description": "Enrich your plants with nutrients.",
+    "price": 200,
+    "image": "items/fertiliser.png",
+    "item_type": "CONSUMABLE",
+    "cooldown_seconds": 5,
+    "parameters": {
+      "growth_amount": 0.5
+    },
+    "effects": [
+      5
+    ]
+  }
+},
+{
+  "model": "game.prize",
+  "pk": 1,
+  "fields": {
+    "value": 0,
+    "option": "🎁 No Reward",
+    "weight": 0.15,
+    "style": {
+      "backgroundColor": "red",
+      "color": "white"
+    }
+  }
+},
+{
+  "model": "game.prize",
+  "pk": 2,
+  "fields": {
+    "value": 50,
+    "option": "🔥 50 Points",
+    "weight": 0.35,
+    "style": {
+      "backgroundColor": "black",
+      "color": "white"
+    }
+  }
+},
+{
+  "model": "game.prize",
+  "pk": 3,
+  "fields": {
+    "value": 100,
+    "option": "🌟 100 Points",
+    "weight": 0.3,
+    "style": {
+      "backgroundColor": "red",
+      "color": "white"
+    }
+  }
+},
+{
+  "model": "game.prize",
+  "pk": 4,
+  "fields": {
+    "value": 200,
+    "option": "💎 200 Points",
+    "weight": 0.15,
+    "style": {
+      "backgroundColor": "black",
+      "color": "white"
+    }
+  }
+},
+{
+  "model": "game.prize",
+  "pk": 5,
+  "fields": {
+    "value": 500,
+    "option": "☘️ 500 Points",
+    "weight": 0.4,
+    "style": {
+      "backgroundColor": "red",
+      "color": "white"
+    }
+  }
+},
+{
+  "model": "game.prize",
+  "pk": 6,
+  "fields": {
+    "value": 1000,
+    "option": "🏆 1000 Points",
+    "weight": 0.1,
+    "style": {
+      "backgroundColor": "black",
+      "color": "white"
+    }
+  }
+},
+{
+  "model": "game.dailyrewardconfig",
+  "pk": 1,
+  "fields": {
+    "day": 1,
+    "reward_type": "ITEM",
+    "amount": 5,
+    "item": 1
+  }
+},
+{
+  "model": "game.dailyrewardconfig",
+  "pk": 2,
+  "fields": {
+    "day": 2,
+    "reward_type": "SPINS",
+    "amount": 2,
+    "item": null
+  }
+},
+{
+  "model": "game.dailyrewardconfig",
+  "pk": 3,
+  "fields": {
+    "day": 3,
+    "reward_type": "ITEM",
+    "amount": 3,
+    "item": 2
+  }
+},
+{
+  "model": "game.dailyrewardconfig",
+  "pk": 4,
+  "fields": {
+    "day": 4,
+    "reward_type": "SPINS",
+    "amount": 4,
+    "item": null
+  }
+},
+{
+  "model": "game.dailyrewardconfig",
+  "pk": 5,
+  "fields": {
+    "day": 5,
+    "reward_type": "ITEM",
+    "amount": 2,
+    "item": 3
+  }
+},
+{
+  "model": "game.dailyrewardconfig",
+  "pk": 6,
+  "fields": {
+    "day": 6,
+    "reward_type": "SPINS",
+    "amount": 6,
+    "item": null
+  }
+},
+{
+  "model": "game.dailyrewardconfig",
+  "pk": 7,
+  "fields": {
+    "day": 7,
+    "reward_type": "ITEM",
+    "amount": 2,
+    "item": 5
+  }
+},
+{
+  "model": "qrcodes.category",
+  "pk": 1,
+  "fields": {
+    "type": "Public Transport",
+    "reward_points": 250
+  }
+},
+{
+  "model": "qrcodes.category",
+  "pk": 2,
+  "fields": {
+    "type": "Cycling",
+    "reward_points": 400
+  }
+},
+{
+  "model": "qrcodes.category",
+  "pk": 3,
+  "fields": {
+    "type": "Recycling",
+    "reward_points": 300
+  }
+},
+{
+  "model": "qrcodes.category",
+  "pk": 4,
+  "fields": {
+    "type": "Reusable",
+    "reward_points": 350
+  }
+},
+{
+  "model": "qrcodes.category",
+  "pk": 5,
+  "fields": {
+    "type": "Power",
+    "reward_points": 600
+  }
+},
+{
+  "model": "qrcodes.qrcode",
+  "pk": 1,
+  "fields": {
+    "code": "cycling-1",
+    "category": 2,
+    "location_name": "Forum Bike Shed",
+    "coordinates": "50.7357483883712, -3.53328179035"
+  }
+},
+{
+  "model": "qrcodes.qrcode",
+  "pk": 2,
+  "fields": {
+    "code": "forum-bins-1",
+    "category": 3,
+    "location_name": "Forum Recycling Bins",
+    "coordinates": "50.7357483883712, -3.53328179035"
+  }
+},
+{
+  "model": "qrcodes.qrcode",
+  "pk": 3,
+  "fields": {
+    "code": "bus-stop-1",
+    "category": 1,
+    "location_name": "Campus Bus Stop",
+    "coordinates": "50.7357483883712, -3.53328179035"
+  }
+},
+{
+  "model": "qrcodes.qrcode",
+  "pk": 4,
+  "fields": {
+    "code": "amory-lights",
+    "category": 5,
+    "location_name": "Amory Building",
+    "coordinates": "50.7357483883712, -3.53328179035"
+  }
+},
+{
+  "model": "qrcodes.qrcode",
+  "pk": 5,
+  "fields": {
+    "code": "water-refill-1",
+    "category": 4,
+    "location_name": "Marketplace",
+    "coordinates": "50.7357483883712, -3.53328179035"
+  }
+}
+]

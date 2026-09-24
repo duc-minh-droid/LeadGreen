@@ -1,7 +1,7 @@
 ### Django ###
 
 # Database
-#*.sqlite3 # Allow database files now because its a pain to migrate
+*.sqlite3
 # media Allow shared media
 #media
 
